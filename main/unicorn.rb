@@ -3,7 +3,7 @@
 working_directory "/opt/dailyReport"
  
 # Unicorn PID file location
-pid "/tmp/pids/unicorn.pid"
+pid "/var/run/unicorn.pid"
  
 # Path to logs
 stderr_path "/var/log/dailyReport/unicorn.err.log"
@@ -11,9 +11,10 @@ stdout_path "/var/log/dailyReport/unicorn.log"
  
 # Unicorn socket
 #listen "/opt/dailyReport/tmp/sockets/unicorn.dailyReport.sock"
-listen "/tmp/unicorn.production.sock"
+listen "/tmp/unicorn.dailyReport.sock"
  
 # Number of processes
+## Rule of thum: 2x per core
 worker_processes 2
  
 # Time-out

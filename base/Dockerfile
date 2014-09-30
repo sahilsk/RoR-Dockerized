@@ -29,7 +29,9 @@ ENV PATH $RBENV_ROOT/bin:$RBENV_ROOT/shims:/usr/local/sbin:/usr/local/bin:/usr/s
 
 # Install ruby
 RUN rbenv install 2.1.2
+RUN rbenv local 2.1.2
 RUN rbenv global 2.1.2
+
 
 
 ## Install Rails
