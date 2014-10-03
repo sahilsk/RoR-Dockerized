@@ -10,11 +10,17 @@ export SECRET_KEY_BASE=$SECRET_KEY_BASE
 DB_NAME="dailyReport_${RAILS_ENV}"
 #DATABASE_URL="mysql2://root:root@localhost/${DB_NAME}"
 
+# Trap sigkill and sigterm: otherwise dockr stop/start will complain for stale unicorn pid
+trap "pkill unicorn_rails ; exit " SIGINT SIGTERM SIGKILL
+
 echo "Stopping  unicorn_rails, if already running"
 pkill unicorn_rails
+
 echo "cleaning tmp files"
 rm -rf tmp/*
+
 echo "Restart Reverse Proxy"
 service nginx restart
+
 echo "Running unicorn"
 bundle exec unicorn_rails -c /etc/dailyReport/unicorn.rb -E $RAILS_ENV -d
