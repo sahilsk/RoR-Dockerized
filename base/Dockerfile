@@ -1,5 +1,5 @@
 #
-# Ruby with rbenv Dockerfile
+# Ruby 2.1.2 via rbenv 
 #
 
 # Pull base image.
@@ -33,7 +33,6 @@ RUN rbenv local 2.1.2
 RUN rbenv global 2.1.2
 
 
-
 ## Install Rails
 RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:chris-lea/node.js
@@ -44,4 +43,4 @@ RUN apt-get install -y nodejs
 RUN gem install rails
 RUN rbenv rehash
 
-CMD /bin/bash
+CMD ["/bin/bash"]
