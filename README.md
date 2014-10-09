@@ -1,4 +1,4 @@
-[sahilsk.github.io/articles/rubyonrails-app-on-docker-part-i-understanding-specs/](sahilsk.github.io/articles/rubyonrails-app-on-docker-part-i-understanding-specs/)
+[http://sahilsk.github.io/articles/rubyonrails-app-on-docker-part-i-understanding-specs/](http://sahilsk.github.io/articles/rubyonrails-app-on-docker-part-i-understanding-specs/)
 
 
 Deployment using Docker
