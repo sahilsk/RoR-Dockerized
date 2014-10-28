@@ -7,6 +7,7 @@ FROM  stackexpress/base_ruby
  
 
 # Fill dependencies for mysql2 gem
+RUN apt-get update
 RUN apt-get install -y libmysqlclient-dev libmysqlclient18 ruby-dev
  
 # Install Nginx.
